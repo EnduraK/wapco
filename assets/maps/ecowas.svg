@@ -1,0 +1,62 @@
+<svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg"
+     class="w-full h-auto">
+
+  <style>
+    .country {
+      fill: #e5e7eb;
+      stroke: #ffffff;
+      stroke-width: 1;
+      cursor: pointer;
+      transition: fill 0.2s ease;
+    }
+    .country:hover {
+      fill: #2563eb;
+    }
+  </style>
+
+  <path class="country" data-name="Senegal"
+    d="M120,280 L200,260 L230,300 L200,340 L140,330 Z" />
+
+  <path class="country" data-name="Gambia"
+    d="M200,300 L240,300 L240,315 L200,315 Z" />
+
+  <path class="country" data-name="Guinea-Bissau"
+    d="M140,340 L200,340 L180,380 L130,370 Z" />
+
+  <path class="country" data-name="Guinea"
+    d="M180,380 L260,360 L280,420 L220,460 L170,420 Z" />
+
+  <path class="country" data-name="Sierra Leone"
+    d="M160,420 L200,420 L190,460 L160,460 Z" />
+
+  <path class="country" data-name="Liberia"
+    d="M200,460 L240,460 L230,520 L200,520 Z" />
+
+  <path class="country" data-name="Côte d'Ivoire"
+    d="M240,420 L320,420 L310,500 L240,500 Z" />
+
+  <path class="country" data-name="Ghana"
+    d="M320,440 L360,440 L360,520 L320,520 Z" />
+
+  <path class="country" data-name="Togo"
+    d="M360,440 L380,440 L380,520 L360,520 Z" />
+
+  <path class="country" data-name="Benin"
+    d="M380,440 L420,440 L420,520 L380,520 Z" />
+
+  <path class="country" data-name="Nigeria"
+    d="M420,420 L540,420 L540,540 L420,540 Z" />
+
+  <path class="country" data-name="Burkina Faso"
+    d="M300,340 L420,340 L420,420 L300,420 Z" />
+
+  <path class="country" data-name="Mali"
+    d="M240,260 L420,260 L420,340 L240,340 Z" />
+
+  <path class="country" data-name="Niger"
+    d="M420,260 L620,260 L620,420 L420,420 Z" />
+
+  <path class="country" data-name="Cape Verde"
+    d="M40,180 L60,180 L60,200 L40,200 Z" />
+
+</svg>
