@@ -1,98 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAPCO | West African Postal Conference</title>
     <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        /* Custom Hover Animations */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">W</div>
-                <span class="text-xl font-bold tracking-tight text-emerald-900">WAPCO</span>
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-lg flex items-center justify-center text-white font-bold shadow-md group-hover:scale-105 transition-transform">W</div>
+                <span class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors">WAPCO</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#overview" class="hover:text-emerald-600 transition-colors">Overview</a>
+                <a href="#mandate" class="hover:text-emerald-600 transition-colors">Mandate</a>
+                <a href="#members" class="hover:text-emerald-600 transition-colors">Member States</a>
+                <a href="#publications" class="hover:text-emerald-600 transition-colors">Repository</a>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#overview" class="hover:text-emerald-600 transition">Overview</a>
-                <a href="#mandate" class="hover:text-emerald-600 transition">Mandate</a>
-                <a href="#governance" class="hover:text-emerald-600 transition">Governance</a>
-                <a href="#members" class="hover:text-emerald-600 transition">Member States</a>
-                <a href="#repository" class="hover:text-emerald-600 transition">Repository</a>
-            </div>
+
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-emerald-100 text-emerald-700 font-bold text-sm rounded-full hover:bg-emerald-200 transition-colors">
+                Contact Secretariat
+            </a>
         </nav>
     </header>
 
-    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden bg-emerald-950 text-white">
-        <div class="absolute inset-0 hero-grid opacity-20"></div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter">
-                One Region. <span class="text-emerald-400">One Network.</span>
+    <section class="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 text-white overflow-hidden py-32">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-400 opacity-10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-emerald-800/50 border border-emerald-500/30 text-emerald-200 text-xs font-bold tracking-widest uppercase mb-6">
+                Established 1976
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-xl">
+                One Region. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-200">One Network.</span>
             </h1>
-            <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-8">
-                Harmonizing postal services across West Africa to drive regional integration and digital transformation.
+            <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Harmonising postal services across West Africa to drive regional integration, e-commerce growth, and digital transformation.
             </p>
-            <a href="#members" class="bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 inline-block">
-                Explore the Network
-            </a>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#members" class="px-8 py-4 bg-white text-emerald-900 font-bold rounded-full shadow-lg hover:bg-emerald-50 hover:scale-105 transition-all duration-300">
+                    Explore Member States
+                </a>
+                <a href="#mandate" class="group flex items-center font-semibold text-white hover:text-emerald-200 transition">
+                    <span>Read our Mandate</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
         </div>
     </section>
 
-    <main class="container mx-auto px-6 py-20">
-        <div id="overview" class="grid md:grid-cols-2 gap-16 items-center mb-32">
-            <div>
-                <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Institutional Mandate</h2>
-                <h3 class="text-4xl font-bold mb-6 text-slate-900 leading-tight">Driving Global Postal Standards locally.</h3>
-                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                    WAPCO serves as the specialized agency for the coordination and development of postal activities within the ECOWAS region, ensuring quality, security, and efficiency.
-                </p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
-                <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700">✓</div>
-                        <p class="text-slate-700">Unified regulatory framework for all member states.</p>
+    <main>
+        
+        <section id="overview" class="py-24 container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4">Institutional Mandate</h2>
+                    <h3 class="text-4xl font-bold mb-6 text-slate-900 leading-tight">Driving Global Postal Standards locally.</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        WAPCO serves as the specialized agency for the coordination and development of postal activities within the ECOWAS region, ensuring quality, security, and efficiency.
+                    </p>
+                    <div class="flex items-center space-x-4 text-slate-500 text-sm font-medium">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white"></div>
+                        </div>
+                        <span>Connecting 15 Member States</span>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700">✓</div>
-                        <p class="text-slate-700">Cross-border e-commerce facilitation and logistics.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -mr-10 -mt-10"></div>
+                    <div class="space-y-6 relative z-10">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-emerald-100 p-3 rounded-xl text-emerald-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Unified Regulation</h4>
+                                <p class="text-slate-500 text-sm mt-1">Harmonized regulatory framework for all ECOWAS member states.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-emerald-100 p-3 rounded-xl text-emerald-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Digital Inclusion</h4>
+                                <p class="text-slate-500 text-sm mt-1">Cross-border e-commerce facilitation and financial logistics.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <section id="members" class="py-20 border-t border-slate-200">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Member States Network</h2>
-                <p class="text-slate-500 mt-4">Interactive map of the 15 WAPCO member countries across the ECOWAS region.</p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto bg-white p-4 rounded-3xl shadow-2xl border border-slate-100">
-                <svg id="wapco-map" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-xl">
-                    <g id="member-states">
-                        <path id="NG" title="Nigeria" class="member-state" d="M450,280 L520,260 L550,340 L480,360 Z" />
-                        <path id="GH" title="Ghana" class="member-state" d="M300,320 L340,315 L350,380 L310,385 Z" />
-                        <path id="SN" title="Senegal" class="member-state" d="M50,150 L120,140 L110,210 L60,200 Z" />
-                        <path id="CI" title="Cote d'Ivoire" class="member-state" d="M220,300 L280,290 L290,370 L230,380 Z" />
-                    </g>
-                </svg>
+        <section id="members" class="py-24 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Member States Network</h2>
+                    <p class="text-slate-500">
+                        Our network spans the 15 ECOWAS nations, connecting millions of citizens through a unified postal infrastructure.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/benin.svg" alt="Benin" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Benin</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">La Poste du Bénin</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/burkina-faso.svg" alt="Burkina Faso" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Burkina Faso</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">SONAPOST</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/cabo-verde.svg" alt="Cabo Verde" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Cabo Verde</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">Correios</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/cote-divoire.svg" alt="Côte d'Ivoire" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Côte d'Ivoire</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">La Poste</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/gambia.svg" alt="Gambia" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Gambia</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">Gambia Post</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/ghana.svg" alt="Ghana" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Ghana</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">Ghana Post</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/guinea.svg" alt="Guinea" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Guinea</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">OPG</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/guinea-bissau.svg" alt="Guinea-Bissau" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Guinea-Bissau</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">Correios</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/liberia.svg" alt="Liberia" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Liberia</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">Ministry of Post</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/mali.svg" alt="Mali" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Mali</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">La Poste du Mali</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/niger.svg" alt="Niger" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Niger</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">Niger Poste</span>
+                    </a>
+
+                    <a href="countries/nigeria.html" class="hover-lift bg-white p-6 rounded-2xl border-2 border-emerald-500 shadow-lg flex flex-col items-center text-center group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] px-2 py-1 font-bold rounded-bl-lg">Active</div>
+                        <img src="assets/images/logos/countries/nigeria.svg" alt="Nigeria" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Nigeria</h3>
+                        <span class="text-xs font-semibold text-emerald-600 uppercase mt-1">NIPOST</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/senegal.svg" alt="Senegal" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Senegal</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">La Poste</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/sierra-leone.svg" alt="Sierra Leone" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Sierra Leone</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">SALPOST</span>
+                    </a>
+
+                    <a href="#" class="hover-lift bg-white p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center group">
+                        <img src="assets/images/logos/countries/togo.svg" alt="Togo" class="w-16 h-16 rounded-full shadow-sm object-cover mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Togo</h3>
+                        <span class="text-xs font-semibold text-slate-400 uppercase mt-1">La Poste</span>
+                    </a>
+
+                </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="bg-slate-950 text-slate-400 py-12 px-6">
-        <div class="container mx-auto grid md:grid-cols-3 gap-12">
-            <div>
-                <span class="text-2xl font-bold text-white">WAPCO</span>
-                <p class="mt-4 text-sm leading-relaxed">Official Secretariat of the West African Postal Conference.</p>
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12">
+            <div class="md:col-span-2">
+                <span class="text-2xl font-bold text-white tracking-tight">WAPCO</span>
+                <p class="mt-4 text-sm leading-relaxed max-w-sm">
+                    The Official Secretariat of the West African Postal Conference. Facilitating postal integration for the ECOWAS region since 1976.
+                </p>
             </div>
             <div>
-                <h4 class="text-white font-bold mb-4">Contact</h4>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-emerald-400 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Member States</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Strategic Plan 2026</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Contact</h4>
                 <p class="text-sm">secretariatcpeao.wapco@yahoo.com</p>
-                <p class="text-sm">+234 813 071 6767</p>
+                <p class="text-sm mt-2">+234 813 071 6767</p>
+                <p class="text-sm mt-4 text-slate-600">Abuja, Nigeria</p>
             </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
+            &copy; 2026 WAPCO. All Rights Reserved.
         </div>
     </footer>
 
