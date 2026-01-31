@@ -2,45 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Country | WAPCO</title>
-  <link href="/assets/css/main.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nigeria | WAPCO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../assets/css/custom.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-slate-50 text-slate-900">
 
-  <!-- HERO -->
-  <section class="bg-white py-16">
-    <div class="container mx-auto px-6 flex items-center gap-6">
-      <img src="/assets/images/flags/nigeria.svg" class="w-20" alt="">
+  <nav class="bg-white border-b border-slate-200 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="../index.html" class="font-bold text-emerald-700 flex items-center gap-2">
+        <span>←</span> Back to WAPCO
+      </a>
+      <span class="text-sm font-semibold text-slate-400 uppercase tracking-widest">Country Profile</span>
+    </div>
+  </nav>
+
+  <section class="bg-white border-b border-slate-200 py-16">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+      <img src="../assets/images/logos/countries/nigeria.svg" class="w-24 shadow-sm rounded" alt="Nigeria Flag">
       <div>
-        <h1 class="text-4xl font-bold">Nigeria</h1>
-        <p class="text-gray-600">Member of WAPCO since 1976</p>
+        <h1 class="text-5xl font-extrabold tracking-tight">Nigeria</h1>
+        <p class="text-xl text-slate-500 mt-2">Member of WAPCO since 1976</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTENT -->
-  <section class="container mx-auto px-6 py-12 grid md:grid-cols-2 gap-10">
-    <div>
-      <h2 class="text-xl font-semibold mb-3">Postal Operator</h2>
-      <p>NIPOST (Nigerian Postal Service)</p>
+  <main class="container mx-auto px-6 py-12 grid lg:grid-cols-3 gap-12">
+    
+    <div class="lg:col-span-1 space-y-10">
+      <div>
+        <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2">Postal Operator</h2>
+        <p class="text-2xl font-bold text-slate-800">NIPOST</p>
+        <p class="text-slate-500">(Nigerian Postal Service)</p>
+      </div>
 
-      <h2 class="text-xl font-semibold mt-6 mb-3">Overview</h2>
-      <p>
-        Nigeria is a founding member of the West African Postal Conference,
-        contributing to regional postal development and cooperation.
-      </p>
+      <div>
+        <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2">Overview</h2>
+        <p class="text-slate-600 leading-relaxed">
+          As a founding member of WAPCO, Nigeria plays a pivotal role in harmonizing postal regulations and driving digital financial inclusion through its vast network of post offices across 36 states.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <h3 class="font-bold mb-6 text-lg">Key Facts</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex justify-between border-b border-slate-50 pb-2">
+            <span class="text-slate-400">Capital</span>
+            <span class="font-semibold">Abuja</span>
+          </li>
+          <li class="flex justify-between border-b border-slate-50 pb-2">
+            <span class="text-slate-400">Region</span>
+            <span class="font-semibold">West Africa</span>
+          </li>
+          <li class="flex justify-between border-b border-slate-50 pb-2">
+            <span class="text-slate-400">Status</span>
+            <span class="font-semibold text-emerald-600">Active Member</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="bg-white p-6 rounded-xl shadow">
-      <h3 class="font-semibold mb-3">Key Facts</h3>
-      <ul class="text-sm text-gray-600 space-y-2">
-        <li><strong>Capital:</strong> Abuja</li>
-        <li><strong>Region:</strong> West Africa</li>
-        <li><strong>Operator:</strong> NIPOST</li>
-      </ul>
+    <div class="lg:col-span-2">
+      <div class="bg-emerald-950 p-4 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-white">
+        <div class="flex justify-between items-center mb-4 px-4 pt-2">
+            <h3 class="text-white font-bold">Interactive State Map</h3>
+            <span class="text-emerald-400 text-xs font-mono">amCharts Vector Engine</span>
+        </div>
+        
+        <object type="image/svg+xml" data="../assets/svg/nigeria-map.svg" class="w-full h-auto min-h-[400px]">
+          Your browser does not support interactive SVGs.
+        </object>
+      </div>
+      <p class="text-center text-slate-400 text-xs mt-4 italic">Proper attribution: Map generated via amCharts Pixel Map Generator.</p>
     </div>
-  </section>
+
+  </main>
+
+  <footer class="bg-slate-100 py-12 mt-20 border-t border-slate-200">
+    <div class="container mx-auto px-6 text-center text-slate-500 text-sm">
+      &copy; 2026 West African Postal Conference (WAPCO). All Rights Reserved.
+    </div>
+  </footer>
 
 </body>
 </html>
