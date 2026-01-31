@@ -1,172 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WAPCO – West African Postal Conference</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAPCO | West African Postal Conference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Institutional Styles */
+        .member-state {
+            fill: #e2e8f0; /* Light Gray (Default) */
+            stroke: #ffffff;
+            stroke-width: 1.5;
+            transition: all 0.3s ease;
+        }
 
-  <!-- Tailwind CDN (later you can self-host) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+        .member-state:hover {
+            fill: #059669; /* Institutional WAPCO Green */
+            cursor: pointer;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
 
-  <link rel="stylesheet" href="assets/css/custom.css">
+        /* Hero Animation for the "Alive" Edition */
+        .hero-grid {
+            background-image: radial-gradient(circle, #059669 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-900 font-sans">
 
-<body class="text-gray-800">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">W</div>
+                <span class="text-xl font-bold tracking-tight text-emerald-900">WAPCO</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#overview" class="hover:text-emerald-600 transition">Overview</a>
+                <a href="#mandate" class="hover:text-emerald-600 transition">Mandate</a>
+                <a href="#governance" class="hover:text-emerald-600 transition">Governance</a>
+                <a href="#members" class="hover:text-emerald-600 transition">Member States</a>
+                <a href="#repository" class="hover:text-emerald-600 transition">Repository</a>
+            </div>
+        </nav>
+    </header>
 
-<!-- HEADER -->
-<header class="sticky top-0 bg-white shadow z-50">
-  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-    <div class="flex items-center gap-2">
-      <img src="assets/images/logos/wapco-logo.png" class="h-10" alt="WAPCO Logo">
-      <span class="font-semibold text-lg">WAPCO</span>
-    </div>
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden bg-emerald-950 text-white">
+        <div class="absolute inset-0 hero-grid opacity-20"></div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter">
+                One Region. <span class="text-emerald-400">One Network.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-8">
+                Harmonizing postal services across West Africa to drive regional integration and digital transformation.
+            </p>
+            <a href="#members" class="bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 inline-block">
+                Explore the Network
+            </a>
+        </div>
+    </section>
 
-    <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+    <main class="container mx-auto px-6 py-20">
+        <div id="overview" class="grid md:grid-cols-2 gap-16 items-center mb-32">
+            <div>
+                <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Institutional Mandate</h2>
+                <h3 class="text-4xl font-bold mb-6 text-slate-900 leading-tight">Driving Global Postal Standards locally.</h3>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    WAPCO serves as the specialized agency for the coordination and development of postal activities within the ECOWAS region, ensuring quality, security, and efficiency.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700">✓</div>
+                        <p class="text-slate-700">Unified regulatory framework for all member states.</p>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700">✓</div>
+                        <p class="text-slate-700">Cross-border e-commerce facilitation and logistics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <nav id="nav-menu" class="hidden md:flex gap-6">
-      <a href="#about">About</a>
-      <a href="#what-we-do">What We Do</a>
-      <a href="#governance">Governance</a>
-      <a href="#publications">Publications</a>
-      <a href="#impact">Impact</a>
-    </nav>
-  </div>
-</header>
+        <section id="members" class="py-20 border-t border-slate-200">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Member States Network</h2>
+                <p class="text-slate-500 mt-4">Interactive map of the 15 WAPCO member countries across the ECOWAS region.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white p-4 rounded-3xl shadow-2xl border border-slate-100">
+                <svg id="wapco-map" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-xl">
+                    <g id="member-states">
+                        <path id="NG" title="Nigeria" class="member-state" d="M450,280 L520,260 L550,340 L480,360 Z" />
+                        <path id="GH" title="Ghana" class="member-state" d="M300,320 L340,315 L350,380 L310,385 Z" />
+                        <path id="SN" title="Senegal" class="member-state" d="M50,150 L120,140 L110,210 L60,200 Z" />
+                        <path id="CI" title="Cote d'Ivoire" class="member-state" d="M220,300 L280,290 L290,370 L230,380 Z" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+    </main>
 
-<!-- HERO -->
-<section class="relative">
-  <img src="assets/images/hero.jpg" class="w-full h-[60vh] object-cover" alt="">
-  <div class="absolute inset-0 bg-black/50 flex items-center">
-    <div class="max-w-4xl mx-auto text-white p-6">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">
-        Strengthening Postal Cooperation in West Africa
-      </h1>
-      <p class="text-base md:text-lg">
-        The West African Postal Conference (WAPCO) promotes harmonized,
-        innovative, and inclusive postal development across the region.
-      </p>
-    </div>
-  </div>
-</section>
+    <footer class="bg-slate-950 text-slate-400 py-12 px-6">
+        <div class="container mx-auto grid md:grid-cols-3 gap-12">
+            <div>
+                <span class="text-2xl font-bold text-white">WAPCO</span>
+                <p class="mt-4 text-sm leading-relaxed">Official Secretariat of the West African Postal Conference.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Contact</h4>
+                <p class="text-sm">secretariatcpeao.wapco@yahoo.com</p>
+                <p class="text-sm">+234 813 071 6767</p>
+            </div>
+        </div>
+    </footer>
 
-<!-- ABOUT -->
-<section id="about" class="max-w-7xl mx-auto p-6 space-y-8">
-  <h2 class="text-2xl font-semibold">About WAPCO</h2>
-
-  <div>
-    <h3 class="font-semibold">Mandate</h3>
-    <p>[INSERT OFFICIAL MANDATE TEXT]</p>
-  </div>
-
-  <div>
-    <h3 class="font-semibold">History</h3>
-    <p>[INSERT HISTORY]</p>
-  </div>
-
-  <div>
-    <h3 class="font-semibold">Legal Status</h3>
-    <p>[INSERT LEGAL STATUS]</p>
-  </div>
-
-  <div>
-    <h3 class="font-semibold">Relationship with ECOWAS & UPU</h3>
-    <p>[INSERT RELATIONSHIP DETAILS]</p>
-  </div>
-</section>
-
-<!-- WHAT WE DO -->
-<section id="what-we-do" class="bg-gray-50 p-6">
-  <div class="max-w-7xl mx-auto space-y-6">
-    <h2 class="text-2xl font-semibold">What We Do</h2>
-
-    <ul class="grid md:grid-cols-2 gap-6">
-      <li>📮 Postal Harmonization</li>
-      <li>💻 Digital Transformation</li>
-      <li>🎓 Capacity Building</li>
-      <li>🌍 Regional Integration</li>
-    </ul>
-  </div>
-</section>
-
-<!-- GOVERNANCE -->
-<section id="governance" class="max-w-7xl mx-auto p-6 space-y-6">
-  <h2 class="text-2xl font-semibold">Governance</h2>
-
-  <div>
-    <h3 class="font-semibold">Council</h3>
-    <p>[INSERT COUNCIL DESCRIPTION]</p>
-  </div>
-
-  <div>
-    <h3 class="font-semibold">Secretariat</h3>
-    <p>[INSERT SECRETARIAT DETAILS]</p>
-  </div>
-
-  <div>
-    <h3 class="font-semibold">Committees</h3>
-    <p>[INSERT COMMITTEES]</p>
-  </div>
-</section>
-
-<!-- MAP + MEMBERS -->
-<section id="members" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-    <!-- SVG MAP -->
-    <div class="map-container relative">
-
-      <!-- PASTE THE SVG HERE (no <p>, no placeholder) -->
-      <!-- Example: -->
-      <svg viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
-        <path class="country" data-name="Nigeria"
-          d="M420 270 L500 260 L540 310 L520 360 L450 360 L420 310 Z" />
-        <path class="country" data-name="Ghana"
-          d="M360 300 L400 290 L420 330 L390 360 L360 340 Z" />
-        <path class="country" data-name="Senegal"
-          d="M170 140 L220 130 L250 150 L240 190 L200 210 L160 190 Z" />
-      </svg>
-
-    </div>
-
-    <!-- MEMBER INFO CARD -->
-    <div id="member-info" class="bg-white p-8 rounded-xl shadow-lg transition-all">
-      <h3 class="text-2xl font-bold mb-2">
-        West Africa
-      </h3>
-      <p class="text-gray-600">
-        Hover over a country on the map to see its details.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Tooltip -->
-  <div id="map-tooltip" class="hidden items-center gap-2"></div>
-</section>
-
-
-<!-- PUBLICATIONS -->
-<section id="publications" class="max-w-7xl mx-auto p-6">
-  <h2 class="text-2xl font-semibold mb-4">Publications</h2>
-  <ul class="space-y-2">
-    <li>[PDF] Strategic Plan</li>
-    <li>[PDF] Annual Report</li>
-    <li>[PDF] Resolutions</li>
-  </ul>
-</section>
-
-<!-- IMPACT -->
-<section id="impact" class="bg-gray-50 p-6">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-2xl font-semibold">Impact</h2>
-    <p>[INSERT STATISTICS & REGIONAL PROJECTS]</p>
-  </div>
-</section>
-
-<footer class="text-center text-sm text-gray-500 p-4">
-  © WAPCO — West African Postal Conference
-</footer>
-
-<script src="assets/js/main.js"></script>
 </body>
 </html>
